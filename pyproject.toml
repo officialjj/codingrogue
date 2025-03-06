@@ -9,6 +9,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pandas = "^2.2.3"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -27,3 +28,6 @@ add_problem = "automation.add_problem:run"
 testpaths = [
     "rogue",
 ]
+
+[tool.ruff]
+exclude = ["automation"]

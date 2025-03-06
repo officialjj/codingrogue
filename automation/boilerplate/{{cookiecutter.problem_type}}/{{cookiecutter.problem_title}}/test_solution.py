@@ -1,5 +1,5 @@
 import pytest
-from {{cookiecutter.problem_type}}.{{cookiecutter.problem_title}}.solution import {{cookiecutter.problem_title}}
+from rogue.{{cookiecutter.problem_type}}.{{cookiecutter.problem_title}}.solution import {{cookiecutter.problem_title}}
 
 
 @pytest.mark.parametrize(

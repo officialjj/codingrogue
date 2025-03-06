@@ -1,0 +1,24 @@
+name: CI for codingrogue
+run-name: ${{ github.actor }} just pushed to main 🚀
+on: [push]
+jobs:
+  single-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running CI on 🐧..."
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+      - name: Set up python311
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'poetry' # caching dependencies
+      - name: Install project dependencies
+        run: poetry install --no-root
+      - name: lint - ruff
+        run: poetry run ruff check $GITHUB_WORKSPACE # eqv to /home/runner/work/codingrogue/codingrogue/
+      - name: test - pytest
+        run: poetry run pytest
+      - run: echo "🎉 CI passed!"
