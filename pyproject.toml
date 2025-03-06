@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "codingrogue"
+version = "0.1.0"
+description = ""
+authors = ["lauwo <lauwo123@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "automation" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+ruff = "^0.9.9"
+cookiecutter = "^2.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+add_problem = "automation.add_problem:run"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "rogue",
+]
