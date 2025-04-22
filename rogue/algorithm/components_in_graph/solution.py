@@ -6,7 +6,7 @@ def find_set(node: int, root: list) -> int:
 
 
 def components_in_graph(queries: list[list]) -> list[int]:
-    """Questions: Find out the max/min number of components in a connected graph, given queries.
+    """Problem: Find out the max/min number of components in a connected graph, given queries.
     i.e.
     queries = [1, 6], [2, 7], [3, 8], [4, 9], [2, 6]
     There are 3 graphs 1-2-6-7, 3-8 and 4-9.

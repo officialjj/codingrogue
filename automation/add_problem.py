@@ -7,17 +7,20 @@ def run():
     """
     Create template code from boilerplate code.
     """
-    parser = argparse.ArgumentParser(
-        description="add a new problem"
+    parser = argparse.ArgumentParser(description="add a new problem")
+    parser.add_argument(
+        "--problem_title", "-ptitle", type=str, help="A unique problem title."
     )
-    parser.add_argument("--problem_title", "-ptitle", type=str, help="A unique problem title.")
-    parser.add_argument("--problem_type", "-ptype", type=str, help="The type of problem.", choices=["algorithm", "data"])
+    parser.add_argument(
+        "--problem_type",
+        "-ptype",
+        type=str,
+        help="The type of problem.",
+        choices=["algorithm", "pandas"],
+    )
     pa = parser.parse_args()
 
-    template_path = (
-        Path(__file__).parent
-        / "boilerplate"
-    )
+    template_path = Path(__file__).parent / "boilerplate"
     output_dir = Path(__file__).parent.parent / "rogue"
 
     context = {
